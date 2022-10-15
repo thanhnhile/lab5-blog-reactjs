@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.App-header {
+  background-color: black;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.App-link {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin-right: 15px;
+}
+
+.content {
+  min-height: 100vh;
+  padding-top: 70px;
+  background-color: #cccc;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  min-width: 50%;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.wrapper h3 {
+  font-size: 30px;
+  padding: 15px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  font-size: 20px;
+  padding: 5px 15px;
+  border: 0;
+  outline: 0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+input:focus,
+textarea:focus {
+  border: 0;
+  outline: 0;
+}
+
+textarea {
+  min-height: 300px;
+  max-width: 100%;
+}
+
+form button {
+  font-size: 18px;
+  background-color: brown;
+  color: #fff;
+  padding: 8px 15px;
+  border: 0;
+  outline: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+form button:hover {
+  opacity: 0.8;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 15px;
+}
+
+.post-item {
+  text-align: left;
+  padding: 15px;
+  background: #fff;
+  margin-bottom: 15px;
+}
+
+.post-item h4 {
+  text-transform: capitalize;
+  padding: 8px 0;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.post-item h4:hover {
+  color: red;
+}
+
+.post-item p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  margin-bottom: 15px;
+}
+
+.btn {
+  border: 0;
+  outline: 0;
+  border-radius: 8px;
+  padding: 8px 15px;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn.del {
+  background-color: red;
+}
+
+.btn.edit {
+  background: darkorange;
+}
+
+.post-detail {
+  text-align: left;
+  background-color: #fff;
+}
+
+.post-detail h3 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.post-detail h4 {
+  font-size: 25px;
+  padding: 15px 0;
+}
+
+.btn-comment {
+  width: fit-content;
+}
+
+input[name="comment"] {
+  border: 1px solid #6666;
+}
+
+.comment-item {
+  width: fit-content;
+  min-width: 100px;
+  padding: 8px 20px;
+  color: #fff;
+  background-color: darkslategray;
+  margin-bottom: 15px;
+  border-radius: 15px;
+}
