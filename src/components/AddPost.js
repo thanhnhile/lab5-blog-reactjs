@@ -3,7 +3,7 @@ import Post from '../models/models.post'
 
 const AddPost = (props) => {
     const getID = useRef(1);
-    const [input, setInput] = useState({ title: '', content: '' });
+    const [input, setInput] = useState(new Post());
     const { setPosts } = props;
     const handleChange = (e) => {
         setInput((prev) => {

@@ -1,20 +1,26 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Post from '../models/models.post';
 
 const PostDetail = ({ posts, setPosts }) => {
     const { id } = useParams();
-    const [post, setPost] = useState({ title: ' ', content: ' ', comments: [] });
+    const [post, setPost] = useState(new Post());
     const commentInput = useRef();
     useEffect(() => {
-        const result = posts.find(p => p.id === Number.parseInt(id));
-        setPost(result);
+        const getPost = () => {
+            const result = posts.find(p => p.id === Number.parseInt(id));
+            setPost(result);
+        }
+        getPost();
     }, [])
     const handleComment = (e) => {
         e.preventDefault();
         let newComment = commentInput.current.value;
         if (newComment) {
-            let comments = [...post.comments, newComment]
-            const newPost = { ...post, comments };
+            post.getComments().push(newComment);
+            const newPost = { ...post };
+            console.log(newPost)
             const temp = [...posts];
             const index = posts.findIndex(p => p.id === Number.parseInt(id));
             temp[index] = newPost;

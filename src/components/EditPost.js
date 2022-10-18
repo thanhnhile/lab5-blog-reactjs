@@ -1,12 +1,17 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import Post from '../models/models.post';
 
 const EditPost = ({ posts, setPosts }) => {
     const { id } = useParams();
-    const [post, setPost] = useState({ title: ' ', content: ' ', comments: [] });
+    const [post, setPost] = useState(new Post());
     useEffect(() => {
-        const post = posts.find(p => p.id === Number.parseInt(id));
-        setPost(post);
+        const getPost = () => {
+            const result = posts.find(p => p.id === Number.parseInt(id));
+            setPost(result);
+        }
+        getPost();
     }, [])
     const navigate = useNavigate();
     const handleSubmit = (e) => {

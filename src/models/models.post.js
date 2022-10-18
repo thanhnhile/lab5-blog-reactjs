@@ -1,9 +1,9 @@
 const Post = class {
-  constructor(id, title, content) {
-    this.id = id;
-    this.title = title;
-    this.content = content;
-    this.comments = [];
+  constructor(id, title, content, comments) {
+    this.id = id || '';
+    this.title = title || '';
+    this.content = content || '';
+    this.comments = comments || [];
   }
   //getter, settter
   getId = () => this.id;
